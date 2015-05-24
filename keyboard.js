@@ -77,7 +77,6 @@ var createKeyboard = function (type,sizekbwrap){
 }
 var empty =function(aux){
 	document.writeln('<div class="keywrapper">');
-	document.writeln(' <div class="empty key3d"></div>'); //***  size
 	document.writeln('</div>');
 }
 var createKey = function(key){

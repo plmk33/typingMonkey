@@ -45,12 +45,7 @@ body{
 	margin:0px;
 	background-color: #cccccc;
 }
-.empty{
-	background: none;	
-	border-color:transparent;
-	color:transparent;
-	border:none;
-}
+
 
 .key2d{  /* plain top of the key where we can see the character printed*/
 	position: absolute;
