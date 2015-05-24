@@ -1,25 +1,38 @@
 "use strict";
 
-var keyStrokes = 0;
+var totalStrokes = 0;
 
-var keyDown = function() {}
-var keyPress = function() {
-	document.getElementById('totalstrokes').innerHTML(++keystrokes);
+var keyDown = function(event) {
+	//console.log("keyDown");
 }
-var keyUp = function() {}
-
-var  swapStyleSheet= function(sheet){
-	document.getElementById('pagestyle').setAttribute('href', sheet);
-	document.getElementById("counter1").innerHTML="counter = "+ ++counter1;
-
+var keyPress = function(event) {
+	totalStrokes++;
+	//console.log("keyPress");
+	getKey(event);
+	
+}
+var keyUp = function(event) {
+	//console.log("keyUp");
 }
 
+
+	
+var getKey = function (event) {
+    var x = event.which || event.keyCode;  	/* Firefox doesn't support event.which, then  use event.keyCode */
+    console.log("The Unicode value is: " + x);
+    console.log(String.fromCharCode(x));
+    return String.fromCharCode(x);
+}
 
 var keyAnimation = function (direction) {
-	if (direction==1){//move arm down
-					
-	} else {		//move arm up
+	console.log("in keyAnimation value =" + direction);
+	if (direction==-1){		//move arm down
+		document.getElementById("dinamic").style.transition= "all 0.1s ease-in-out";
+		document.getElementById("dinamic").style.transform = "rotate(-1deg)";
 
+	} else {				//move arm up
+		document.getElementById("dinamic").style.transition = "all 0.5s ease-in-out";
+		document.getElementById("dinamic").style.transform = "rotate(+10deg)";
 	}
     
 

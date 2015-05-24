@@ -21,15 +21,17 @@
 	</div>
 
 	<div id="inputArea" class="center">			<!--input area for user-->
-		<input type="text" onkeydown="keyDown" onkeypress="keyPress()" onkeyup="keyUp()">...</input>
+		<input type="text" onkeydown="keyDown(event)" onkeypress="keyPress(event)" onkeyup="keyUp(event)">...</input>
 	</div>
-
+	<button onclick="keyAnimation(1)">teclea</button>
+	<button onclick="keyAnimation(-1)">desteclea</button>
 	<div id="graphKeyStroke" > <!--animated image to see keystrokes-->
 		<div id="dinamic" class="graphSize"></div>
 		<div id="static" class="graphSize"></div>
 	</div>
-	<button onclick="keyAnimation(1)">teclea</button>
-
+	
+	<div id="footer"></div>
 </body>
+
 
 </html>
