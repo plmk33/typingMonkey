@@ -76,7 +76,9 @@ var createKeyboard = function (type,sizekbwrap){
 
 }
 var empty =function(aux){
-	document.writeln('<div class="empty key3d " style="width:'+ aux*10 +'px;"></div>'); //***  size
+	document.writeln('<div class="keywrapper">');
+	document.writeln(' <div class="empty key3d"></div>'); //***  size
+	document.writeln('</div>');
 }
 var createKey = function(key){
 	/*switch(key){
@@ -86,10 +88,10 @@ var createKey = function(key){
 	}
 	*/
 	 document.writeln('<div class="keywrapper">');
-	 document.writeln('	<div id="k3d'+key+'" class="key3d" onclick="keyPress(event)">');
+	 document.writeln('	 <div id="k3d'+key+'" class="key3d" onclick="keyPress(event)">');
 	 document.writeln('  	<div id="k2d'+key+'" class="key2d">');
 	 document.writeln('    		<p class="keylabel">'+key+'</p>');
 	 document.writeln(' 	</div>');
-	 document.writeln('	</div>');
+	 document.writeln('	 </div>');
 	 document.writeln('</div>');
 }  
