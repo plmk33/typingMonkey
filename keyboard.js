@@ -24,14 +24,18 @@ var createKeyboard = function (type){
 		spanish:
 	}
 	*/
-	console.log(kbLayout.ENG[3].length);
-	for(var i=0, j=kbLayout.ENG[3].length;i<j;i++){
-		var aux=kbLayout.ENG[3][i];
-		//if(aux==isNaN){createKey(aux)} 	//hay que quitar los numeros y dejarlos como espacios
-		createKey(aux);
-	}	
-	createKey(kbLayout.ENG[4][1]);
-	createKey("S");
+	//console.log(kbLayout.ENG[3].length);
+	document.writeln('<div id="keyboard" class="center">');
+	for (var g=0, h=kbLayout.ENG.length;g<h;g++){  //rows
+		document.writeln("<div  id='kbRow" + g + "' class='kbRow'>");
+		for(var i=0, j=kbLayout.ENG[g].length;i<j;i++){
+			var aux=kbLayout.ENG[g][i];
+			//if(aux==isNaN){createKey(aux)} 	//hay que quitar los numeros y dejarlos como espacios
+			createKey(aux);
+		}
+		document.writeln("</div>");
+	}
+	document.writeln("</div>");
 
 
 }
@@ -48,8 +52,8 @@ var createKey = function(key){
 			</div>
 		</div>
 */
-	 document.writeln('<div class="key3d" onclick="keyPress(event)">');
-	 document.writeln('  <div id="k'+key+'" class="key2d">');
+	 document.writeln('<div id="k3d'+key+'" class="key3d" onclick="keyPress(event)">');
+	 document.writeln('  <div id="k2d'+key+'" class="key2d">');
 	 document.writeln('    <p class="keylabel">'+key+'</p>');
 	 document.writeln('  </div>');
 	 document.writeln('</div>');
