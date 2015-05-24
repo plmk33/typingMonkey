@@ -24,7 +24,12 @@ var getKey = function (event) {
     return String.fromCharCode(x);
 }
 
-var keyAnimation = function (direction) {
+var keyAnimation = function(key,direction){
+	monkeyAnimation(direction);
+}
+
+
+var monkeyAnimation = function (direction) {
 	console.log("in keyAnimation value =" + direction);
 	if (direction==-1){		//move arm down
 		document.getElementById("dinamic").style.transition= "all 0.1s ease-in-out";
