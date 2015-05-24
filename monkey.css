@@ -23,7 +23,10 @@ body{
 	padding:3em;
 	display:inline-flex;
 }
-
+.empty{
+	background: none;	
+	border-color:transparent;
+}
 .key3d{  /*shape of a key; sides, shadows, shines but not the plain top*/
   	border: solid 1px black;
 	border-radius: 5px;
