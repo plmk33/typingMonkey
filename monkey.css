@@ -29,12 +29,11 @@ body{
 .kbRow{
 	display:inline-flex;
 }
-
-.empty{
-	background: none;	
-	border-color:transparent;
-	color:transparent;
+#kbRow0{
+	margin-bottom: 31px; /*space betwen row 0 (f1,f2,..) and row 1 (1,2,3,...)*/
 }
+
+
 .key3d{  /*shape of a key; sides, shadows, shines but not the plain top*/
   	border: solid 1px black;
 	border-radius: 5px;
@@ -44,6 +43,12 @@ body{
 	margin:0px;
 	padding: 4px 6px 9px;
 	background-color: #cccccc;
+}
+.empty{
+	background: none;	
+	border-color:transparent;
+	color:transparent;
+	border:none;
 }
 
 .key2d{  /* plain top of the key where we can see the character printed*/

@@ -30,8 +30,13 @@ var createKeyboard = function (type){
 		document.writeln("<div  id='kbRow" + g + "' class='kbRow'>");
 		for(var i=0, j=kbLayout.ENG[g].length;i<j;i++){
 			var aux=kbLayout.ENG[g][i];
-			//if(aux==isNaN){createKey(aux)} 	//hay que quitar los numeros y dejarlos como espacios
-			createKey(aux);
+			if(isNaN(aux)){  //convert number to spaces between keys. This spaces are record as numbers
+				createKey(aux);
+			} 	
+			else{
+				empty(aux);
+			}
+			//createKey(aux);
 		}
 		document.writeln("</div>");
 	}
@@ -39,8 +44,8 @@ var createKeyboard = function (type){
 
 
 }
-var empty =function(){
-	document.writeln('<div class="key3d empty"></div>');
+var empty =function(aux){
+	document.writeln('<div class="empty key3d " style="width:'+ aux*10 +'px;"></div>');
 }
 var createKey = function(key){
 /*
