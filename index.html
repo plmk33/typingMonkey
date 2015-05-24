@@ -3,6 +3,7 @@
 <head>
 	<link id="defCSS" rel="stylesheet" type="text/css" href="monkey.css">
     <script src="monkey.js"></script> 
+    <script src="keyboard.js"></script> 
 </head>
 
 <body>
@@ -14,13 +15,8 @@
     </div> 
 
 	<div id="keyboard" class="center">				<!--shows keyboard   -->
-		<div class="key3d">
-			<div id="k65" class="key2d">
-				<p class="keylabel">
-					A
-				</p>
-			</div>
-		</div>
+
+		<script> createKeyboard("Eng");</script>
 		<div class="key3d">
 			<div id="k83" class="key2d"><p class="keylabel">S</p></div>
 		</div>
