@@ -1,7 +1,14 @@
-/* will create the keyboard on html*/
+/* will create the keyboard on html */
 
 "use strict";
+
+
+
 var kbLayout = []; /*number means space betwen keys*/
+
+kbLayout.widthX=1; //times the width of keys. vary on the screen size.(responsive)   e.g: width= 4*kWidthX
+kbLayout.heightX=1; //times height of keys
+
 kbLayout.ENG = [];
 kbLayout.ENG[0] = ["Esc",1,"F1","F2","F3","F4",0.5,"F5","F6","F7","F8",0.5,"F9","F10","F11","F12",0.5,"PrtSc","Scroll Lock","Pause\nBreak"];
 kbLayout.ENG[1] = ["~\n`","!\n1","@\n2","#\n3","$\n4","%\n5","^\n6","&\n7","*\n8","(\n9",")\n0","_\n-","+\n=","Backspace",0.5,"Insert","Home","PgUp",0.5,"Num Lock","/","*","-"];
@@ -16,8 +23,32 @@ kbLayout.ES[3] = ['bloq','A','S','D','F','G','H','J','K','L','Ñ','sp','int'];
 kbLayout.ES[4] = ['shift','<','Z','X','C','V','B','N','M',',','.','-','shift'];
 kbLayout.ES[5] = ['ctrl','sp','sp','alt','spacebar','altgr','sp','ctrl'];
 
+var sizekb = function(sizekbwrap){ // get a good keyboard size for the screen. kb=Keyboard.units are pixels.
+	if(sizekbwrap>5000){
+		kbLayout.widthX=6;
+		kbLayout.heightX=6;
+	}else if(sizekbwrap>1800){
+		kbLayout.widthX=5;
+		kbLayout.heightX=5;
+	}else if(sizekbwrap>1000){
+		kbLayout.widthX=4;
+		kbLayout.heightX=4;
+	}else if(sizekbwrap>800){
+		kbLayout.widthX=3;
+		kbLayout.heightX=3;
+	}else{
+		kbLayout.widthX=2;
+		kbLayout.heightX=2;
+	}
 
-var createKeyboard = function (type){
+	//var xs = document.querySelectorAll(".key3d");
+	//xs.style.backgroundColor="#f00";
+
+
+}
+
+var createKeyboard = function (type,sizekbwrap){
+	//sizekb(sizekbwrap);
 	/*  
 	switch(type){  //for future multiple keyboards
 		default:
@@ -45,18 +76,15 @@ var createKeyboard = function (type){
 
 }
 var empty =function(aux){
-	document.writeln('<div class="empty key3d " style="width:'+ aux*10 +'px;"></div>');
+	document.writeln('<div class="empty key3d " style="width:'+ aux*10 +'px;"></div>'); //***  size
 }
 var createKey = function(key){
-/*
-		<div class="key3d">
-			<div id="k65" class="key2d">
-				<p class="keylabel">
-					A
-				</p>
-			</div>
-		</div>
-*/
+	/*switch(key){
+		case "tab":
+			console.log("rendering tab");
+			break;
+	}
+	*/
 	 document.writeln('<div id="k3d'+key+'" class="key3d" onclick="keyPress(event)">');
 	 document.writeln('  <div id="k2d'+key+'" class="key2d">');
 	 document.writeln('    <p class="keylabel">'+key+'</p>');
