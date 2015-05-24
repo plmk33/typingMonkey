@@ -91,7 +91,7 @@ body{
 #k4{}
 /*etc*/ 
 
-/*dinamic image*/
+/************************dinamic image (monkey)*******************/
 .graphSize{
 	width:300px;
 	height: 250px;
@@ -99,7 +99,7 @@ body{
 #graphKeyStroke{               	/*background*/
 	background-color: #555;
 	border: 2px solid #999;
-	position: absolute;    /*for overlaping */
+	position: absolute;    /*2 layers overlaping */
 	z-index: -2;
 }
 #static{						/*monkey body*/
