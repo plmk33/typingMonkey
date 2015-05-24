@@ -4,6 +4,7 @@ var totalStrokes = 0;
 
 var keyDown = function(event) {
 	//console.log("keyDown");
+	keyAnimation(getKey(event),1);
 }
 var keyPress = function(event) {
 	totalStrokes++;
@@ -13,6 +14,7 @@ var keyPress = function(event) {
 }
 var keyUp = function(event) {
 	//console.log("keyUp");
+	keyAnimation(getKey(event),-1);
 }
 
 
