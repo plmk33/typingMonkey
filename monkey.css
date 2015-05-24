@@ -1,0 +1,84 @@
+
+body{
+	background: black;
+}
+
+.center{
+	margin-right:auto;
+	margin-left:auto;	
+}
+
+#exerciseText{
+	border:2px;
+	background-color: rgb(200,256,256);
+	max-width:50em;
+	min-height:1em;
+}
+#keyboard{
+    background-color: white;
+    border:2px;
+	border-radius: 3px;
+	padding:3em;
+}
+.key{
+	display:inline-block;
+	border:2px;
+	border-color:rgb(210,210,210);
+	border-radius: 3px;
+	border-style:outset;
+	min-width:3em;
+	min-height: 3em;
+	margin:0.5em;
+	padding:0.5em;
+}
+#inputArea{
+	border:2px;
+	border-style: dotted;
+	width:50em;
+	min-height:1em;
+
+}
+
+
+		/*keys*/
+
+#k1{}
+#k2{}
+#k3{}
+#k4{}
+/*etc*/ 
+
+/*dinamic image*/
+.graphSize{
+	width:300px;
+	height: 250px;
+}
+#graphKeyStroke{               	/*background*/
+	background-color: #555;
+	border: 2px solid #999;
+	position: absolute;    //for overlaping
+	z-index: -3;
+}
+#static{						/*monkey body*/
+	background-image: url("img/mBody.png");
+	background-repeat: no-repeat;
+}
+#dinamic{						/*monkey hand*/
+	background-image: url("img/mHand.png");
+	background-repeat: no-repeat;
+	z-index: +1;                    /* layer between graphKeyStroke(background) and mBody*/
+	position:absolute;
+	top:100px;
+	left: 80px;
+	-webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+#dinamic:hover{
+	-webkit-transform : rotate(4deg); 
+    -moz-transform : rotate(4deg); 
+    -ms-transform : rotate(4deg); 
+    -o-transform : rotate(4deg); 
+    transform : rotate(4deg); 
+}

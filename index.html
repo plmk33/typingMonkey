@@ -1,0 +1,35 @@
+<html>
+
+<head>
+	<link id="defCSS" rel="stylesheet" type="text/css" href="monkey.css">
+    <script src="monkey.js"></script> 
+</head>
+
+<body>
+
+	<div id="exerciseText" class="center">			<!--text to be typed by the user-->
+		<p id="pastText">...</p> 											<!-- previous text -->
+		<p id="text">Here you will see text you have to write...</p> 		<!-- text -->
+		<p id="futText">This is the text comming next.</p>					<!-- future text -->
+    </div> 
+
+	<div id="keyboard" class="center">				<!--shows keyboard   -->
+		<div id="k1" class="key">a</div>
+		<div id="k2" class="key">s</div>
+		<div id="k3" class="key">d</div>
+		<div id="k4" class="key">f</div>
+	</div>
+
+	<div id="inputArea" class="center">			<!--input area for user-->
+		<input type="text" onkeydown="keyDown" onkeypress="keyPress()" onkeyup="keyUp()">...</input>
+	</div>
+
+	<div id="graphKeyStroke" > <!--animated image to see keystrokes-->
+		<div id="dinamic" class="graphSize"></div>
+		<div id="static" class="graphSize"></div>
+	</div>
+	<button onclick="keyAnimation(1)">teclea</button>
+
+</body>
+
+</html>
