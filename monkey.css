@@ -37,8 +37,8 @@ body{
 }
 
 .keywrapper{
-	width:54px;  /*54px default*/
-	height: 54px;
+	width:44px;  /*size of default. key.changed in keyboard.js  - responsive- 44px default*/
+	height: 44px;
 	margin:1px;
 }
 /*.key3d{  shape of a key; sides, shadows, shines but not the plain top

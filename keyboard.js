@@ -6,8 +6,8 @@
 
 var kbLayout = []; /*number means space betwen keys*/
 
-kbLayout.widthX=1; //times the width of keys. vary on the screen size.(responsive)   e.g: width= 4*kWidthX
-kbLayout.heightX=1; //times height of keys
+kbLayout.widthX=44; //size ok keys. vary on the screen size.(responsive) . in pixels 44 by default  
+kbLayout.heightX=44; 
 
 kbLayout.ENG = [];
 kbLayout.ENG[0] = ["Esc",1,"F1","F2","F3","F4",0.5,"F5","F6","F7","F8",0.5,"F9","F10","F11","F12",0.5,"PrtSc","Scroll Lock","Pause<br>Break"];
