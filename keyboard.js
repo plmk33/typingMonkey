@@ -88,10 +88,10 @@ var createKey = function(key){
 	}
 	*/
 	 document.writeln('<div class="keywrapper">');
-	 document.writeln('	 <div id="k3d'+key+'" class="key3d" onclick="keyPress(event)">');
+	 //document.writeln('	 <div id="k3d'+key+'" class="key3d" onclick="keyPress(event)">');
 	 document.writeln('  	<div id="k2d'+key+'" class="key2d">');
 	 document.writeln('    		<p class="keylabel">'+key+'</p>');
 	 document.writeln(' 	</div>');
-	 document.writeln('	 </div>');
+	 //document.writeln('	 </div>');
 	 document.writeln('</div>');
 }  

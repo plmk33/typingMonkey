@@ -39,27 +39,39 @@ body{
 .keywrapper{
 	width:54px;  /*54px default*/
 	height: 54px;
+	margin:1px;
 }
-.key3d{  /*shape of a key; sides, shadows, shines but not the plain top*/
-  	box-shadow: 0 0 0 1px black inset;  /*sustitutes border*/
+/*.key3d{  shape of a key; sides, shadows, shines but not the plain top
+  	box-shadow: 0 0 0 1px black inset;  /ustitutes border
 	border-radius: 5px;
 	width:100%;
 	height: 100%;
 	margin:0px;
 	background-color: #cccccc;
-}
+}*/
 
 
 .key2d{  /* plain top of the key where we can see the character printed*/
-	position: absolute;
-	border-radius: 2px;
+
+	top:1px;
+	border-radius: 4px;
   	border: solid 1px #ddd;
-	height: 36px;
-	width: 36px;
+	height: 100%;
+	width: 100%;
 	background-color: #fcfcfc;
   	padding: 2px;
   	color:#000;
-  	margin:4px 6px 9px;
+
+  	border-top: #ddd solid 4px;
+  	border-bottom: #aaa solid 8px;
+  	border-left: #ccc solid 6px;
+  	border-right: #bbb 6px solid;
+
+  	-webkit-box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.75);  /*external border*/
+    -moz-box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.75);
+
+    box-sizing: border-box;
 }
 .keylabel{
 	position: relative;
