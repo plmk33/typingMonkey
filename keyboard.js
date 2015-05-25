@@ -5,9 +5,8 @@
 
 
 var kbLayout = []; /*number means space betwen keys*/
+kbLayout.constantkb=29; /*constant for creating keyboard.  ==(kb width/key width) */
 
-kbLayout.widthX=44; //size ok keys. vary on the screen size.(responsive) . in pixels 44 by default  
-kbLayout.heightX=44; 
 
 kbLayout.ENG = [];
 kbLayout.ENG[0] = ["Esc",1,"F1","F2","F3","F4",0.5,"F5","F6","F7","F8",0.5,"F9","F10","F11","F12",0.5,"PrtSc","Scroll Lock","Pause<br>Break"];
@@ -24,23 +23,40 @@ kbLayout.ES[4] = ['shift','<','Z','X','C','V','B','N','M',',','.','-','shift'];
 kbLayout.ES[5] = ['ctrl','sp','sp','alt','spacebar','altgr','sp','ctrl'];
 
 
-var sizekb = function(sizekbwrap){ // get a good keyboard size for the screen. kb=Keyboard.units are pixels.
-	if(sizekbwrap>5000){
+function getSizeWindow(){
+    var w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    x = w.innerWidth || e.clientWidth || g.clientWidth;
+    //var y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+    console.log("x="+x);
+    return x;
+}
+
+
+
+var sizekb = function(){ // get a good keyboard size for the screen. kb=Keyboard.units are pixels.
+	var windowX=getSizeWindow(),
+	keysize = parseInt(windowX/kbLayout.constant); //29 is constant .Global var
+	console.log("size of window="+windowX+"key size="+keysize);
+/*
+	if(windowX>3000){
 		kbLayout.widthX=6;
 		kbLayout.heightX=6;
-	}else if(sizekbwrap>1800){
+	}else if(windowX>1800){
 		kbLayout.widthX=5;
 		kbLayout.heightX=5;
-	}else if(sizekbwrap>1000){
+	}else if(windowX>1280){
 		kbLayout.widthX=4;
 		kbLayout.heightX=4;
-	}else if(sizekbwrap>800){
+	}else if(windowX>800){
 		kbLayout.widthX=3;
 		kbLayout.heightX=3;
 	}else{
 		kbLayout.widthX=2;
 		kbLayout.heightX=2;
-	}
+	}*/
 
 	//var xs = document.querySelectorAll(".key3d");
 	//xs.style.backgroundColor="#f00";
@@ -48,8 +64,8 @@ var sizekb = function(sizekbwrap){ // get a good keyboard size for the screen. k
 
 }
 
-var createKeyboard = function (type,sizekbwrap){
-	//sizekb(sizekbwrap);
+var createKeyboard = function (type,windowX){
+	//sizekb(windowX);
 	/*  
 	switch(type){  //for future multiple keyboards
 		default:

@@ -37,7 +37,7 @@ body{
 }
 
 .keywrapper{
-	width:44px;  /*size of default. key.changed in keyboard.js  - responsive- 44px default*/
+	width:44px;  /*size of default. key.changed in keyboard.js>sizekb(var)  - responsive- 44px default*/
 	height: 44px;
 	margin:1px;
 }
