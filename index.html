@@ -3,10 +3,11 @@
 <head>
 	<link id="defCSS" rel="stylesheet" type="text/css" href="monkey.css">
     <script src="monkey.js"></script> 
-    <script src="keyboard.js"></script> 
+    <script src="keyboard.js"  ></script> 
+    <script src="resizekb.js" defer></script>
 </head>
 
-<body onload="sizekb()" onresize="sizekb()">
+<body onresize="resizekb()">
 
 	<div id="exerciseText" class="center noTextSelection">			<!--text to be typed by the user-->
 		<pre id="pastText">...</pre> 											<!-- previous text -->
