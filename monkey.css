@@ -21,10 +21,13 @@ body{
 }
 #keyboard{
     background-color: white;
-    border:2px;
-	border-radius: 3px;
-	padding:3em;
+	border-radius: 30px;
+	padding:54px;
 	display:table-caption;
+	border-bottom: 5px grey solid;
+  	border-left: 2px grey solid;
+  	border-right: 2px grey solid;
+  	border-top: 3px rgb(211, 204, 204) solid;
 }
 .kbRow{
 	display:inline-flex;
