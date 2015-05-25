@@ -22,18 +22,19 @@ body{
 #keyboard{
     background-color: white;
 	border-radius: 30px;
-	padding:54px;
+	padding:44px;
 	display:table-caption;
 	border-bottom: 5px grey solid;
   	border-left: 2px grey solid;
   	border-right: 2px grey solid;
   	border-top: 3px rgb(211, 204, 204) solid;
+  	margin:10px;
 }
 .kbRow{
 	display:inline-flex;
 }
 #kbRow0{
-	margin-bottom: 31px; /*space betwen row 0 (f1,f2,..) and row 1 (1,2,3,...)*/
+	margin-bottom: 31px; /*space betwen row 0  and row 1 */
 }
 
 .keywrapper{

@@ -1,11 +1,14 @@
-/* will create the keyboard on html */
+/**creates the keyboard in HTML code
+  *
+  * 
+  */
 
 "use strict";
 
 
 
-var kbLayout = []; /*number means space betwen keys*/
-kbLayout.constantkb=29; /*constant for creating keyboard.  ==(kb width/key width) */
+var kbLayout = []; 
+kbLayout.constantkb=29; /*constant for creating keyboard.  ==(keyboard_width/key_width) */
 
 
 kbLayout.ENG = [];
@@ -15,6 +18,7 @@ kbLayout.ENG[2] = ["Tab","Q","W","E","R","T","Y","U","I","O","P","{<br>[","}<br>
 kbLayout.ENG[3] = ["Caps Lock","A","S","D","F","G","H","J","K","L",":<br>;","\'\'<br>\'","Enter",4,"4<br>&larr;","5","6<br>&rarr;"];
 kbLayout.ENG[4] = ["Shift","Z","X","C","V","B","N","M","<<br>,","><br>.","?<br>/","Shift",1.5,"&uarr;",1.5,"1<br>End","2<br>&darr;","3<br>PgDn","Enter"];
 kbLayout.ENG[5] = ["Ctrl","Win","Alt","spacebar","Alt","Win","Menu","Ctrl",0.5,"&larr;","&darr;","&rarr;",0.5,"0<br>Ins",".<br>Del"];
+
 kbLayout.ES = [];
 kbLayout.ES[1] = ['º','1','2','3','4','5','6','7','8','9','0','p','sp','del'];
 kbLayout.ES[2] = ['tab','Q','W','E','R','T','Y','U','I','O','P','sp','sp'];
@@ -23,46 +27,6 @@ kbLayout.ES[4] = ['shift','<','Z','X','C','V','B','N','M',',','.','-','shift'];
 kbLayout.ES[5] = ['ctrl','sp','sp','alt','spacebar','altgr','sp','ctrl'];
 
 
-function getSizeWindow(){
-    var w = window,
-    d = document,
-    e = d.documentElement,
-    g = d.getElementsByTagName('body')[0],
-    x = w.innerWidth || e.clientWidth || g.clientWidth;
-    //var y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-    console.log("x="+x);
-    return x;
-}
-
-
-
-var sizekb = function(){ // get a good keyboard size for the screen. kb=Keyboard.units are pixels.
-	var windowX=getSizeWindow(),
-	keysize = parseInt(windowX/kbLayout.constant); //29 is constant .Global var
-	console.log("size of window="+windowX+"key size="+keysize);
-/*
-	if(windowX>3000){
-		kbLayout.widthX=6;
-		kbLayout.heightX=6;
-	}else if(windowX>1800){
-		kbLayout.widthX=5;
-		kbLayout.heightX=5;
-	}else if(windowX>1280){
-		kbLayout.widthX=4;
-		kbLayout.heightX=4;
-	}else if(windowX>800){
-		kbLayout.widthX=3;
-		kbLayout.heightX=3;
-	}else{
-		kbLayout.widthX=2;
-		kbLayout.heightX=2;
-	}*/
-
-	//var xs = document.querySelectorAll(".key3d");
-	//xs.style.backgroundColor="#f00";
-
-
-}
 
 var createKeyboard = function (type,windowX){
 	//sizekb(windowX);
@@ -89,9 +53,11 @@ var createKeyboard = function (type,windowX){
 		document.writeln("</div>");
 	}
 	document.writeln("</div>");
-
-
+	
 }
+
+
+
 var empty =function(aux){
 	document.writeln('<div class="keywrapper">');
 	document.writeln('</div>');
@@ -111,3 +77,47 @@ var createKey = function(key){
 	 //document.writeln('	 </div>');
 	 document.writeln('</div>');
 }  
+
+
+function getSizeWindow(){
+    var w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    x = w.innerWidth || e.clientWidth || g.clientWidth;
+    //var y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+    console.log("x="+x);
+    return x;
+}
+
+
+
+var resizekb = function(){ // get a good keyboard size for the screen. kb=Keyboard.units are pixels.
+	var windowX=getSizeWindow(),
+	keysize = parseInt(windowX/kbLayout.constantkb); //29 is constant .Global var
+	console.log("size of window="+windowX+"key size="+keysize);
+	var aux = document.getElementsByClassName("keywrapper");
+	for(var i=0,j=aux.length;i<j;i++){
+		aux[i].style.width=keysize+"px"; 
+		aux[i].style.height=keysize+"px";
+	}
+	var aux2 = document.getElementsByClassName("key2d");
+	var shadowTop="#ddd",
+	shadowLeft="#aaa",
+	shadowBottom="#ccc",
+	shadowTop="#bbb",
+	shadowRight="#bbb";;
+	for(var i=0,j=aux2.length;i<j;i++){
+		aux2[i].style.borderTop=shadowTop+" "+parseInt(keysize/10)+"px solid";
+		aux2[i].style.borderLeft=shadowLeft+" "+parseInt(keysize/7)+"px solid";
+		aux2[i].style.borderBottom=shadowBottom+" "+parseInt(keysize/5)+"px solid";
+		aux2[i].style.borderRight=shadowRight+" "+parseInt(keysize/7)+"px solid";
+	}
+	var aux3 = document.getElementsByClassName("keylabel");
+	for(var i=0,j=aux2.length;i<j;i++){
+		aux3[i].style.fontSize=parseInt(keysize/4)+"px";
+		aux3[i].style.top=parseInt(keysize/40)+"px"; 
+	}
+	document.getElementById("keyboard").style.borderRadius=keysize/2+"px";
+	document.getElementById("keyboard").style.padding=keysize+"px";
+}
