@@ -8,8 +8,13 @@
 
 
 var kbLayout = []; 
-kbLayout.constantkb=29; /*constant for creating keyboard.  ==(keyboard_width/key_width) */
+kbLayout.constantkb=29; /*constant for creating keyboard.  ==(screen_width/key_width) */
 
+kbLayout.shadowTop="#ddd";
+kbLayout.shadowLeft="#aaa";
+kbLayout.shadowBottom="#ccc";
+kbLayout.shadowTop="#bbb";
+kbLayout.shadowRight="#bbb";
 
 kbLayout.ENG = [];
 kbLayout.ENG[0] = ["Esc",1,"F1","F2","F3","F4",0.5,"F5","F6","F7","F8",0.5,"F9","F10","F11","F12",0.5,"PrtSc","Scroll Lock","Pause<br>Break"];
@@ -102,16 +107,11 @@ var resizekb = function(){ // get a good keyboard size for the screen. kb=Keyboa
 		aux[i].style.height=keysize+"px";
 	}
 	var aux2 = document.getElementsByClassName("key2d");
-	var shadowTop="#ddd",
-	shadowLeft="#aaa",
-	shadowBottom="#ccc",
-	shadowTop="#bbb",
-	shadowRight="#bbb";;
 	for(var i=0,j=aux2.length;i<j;i++){
-		aux2[i].style.borderTop=shadowTop+" "+parseInt(keysize/10)+"px solid";
-		aux2[i].style.borderLeft=shadowLeft+" "+parseInt(keysize/7)+"px solid";
-		aux2[i].style.borderBottom=shadowBottom+" "+parseInt(keysize/5)+"px solid";
-		aux2[i].style.borderRight=shadowRight+" "+parseInt(keysize/7)+"px solid";
+		aux2[i].style.borderTop=kbLayout.shadowTop+" "+parseInt(keysize/10)+"px solid";
+		aux2[i].style.borderLeft=kbLayout.shadowLeft+" "+parseInt(keysize/7)+"px solid";
+		aux2[i].style.borderBottom=kbLayout.shadowBottom+" "+parseInt(keysize/5)+"px solid";
+		aux2[i].style.borderRight=kbLayout.shadowRight+" "+parseInt(keysize/7)+"px solid";
 	}
 	var aux3 = document.getElementsByClassName("keylabel");
 	for(var i=0,j=aux2.length;i<j;i++){
