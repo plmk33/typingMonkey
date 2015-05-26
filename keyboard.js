@@ -19,10 +19,10 @@ kbLayout.shadowRight="#bbb";
 kbLayout.ENG = [];
 kbLayout.ENG[0] = ["Esc",1,"F1","F2","F3","F4",0.5,"F5","F6","F7","F8",0.5,"F9","F10","F11","F12",0.5,"PrtSc","Scroll Lock","Pause<br>Break"];
 kbLayout.ENG[1] = ["~<br>`","!<br>1","@<br>2","#<br>3","$<br>4","%<br>5","^<br>6","&<br>7","*<br>8","(<br>9",")<br>0","_<br>-","+<br>=","Backspace",0.5,"Insert","Home","PgUp",0.5,"Num Lock","/","*","-"];
-kbLayout.ENG[2] = ["Tab","Q","W","E","R","T","Y","U","I","O","P","{<br>[","}<br>]","|<br>\\",0.5,"Delete","End","PgDn",0.5,"7<br>Home","8<br>a","9<br>PgUp","+"]
-kbLayout.ENG[3] = ["Caps Lock","A","S","D","F","G","H","J","K","L",":<br>;","\'\'<br>\'","Enter ",4,"4<br>&larr;","5_","6<br>&rarr;"];
-kbLayout.ENG[4] = ["Shift","Z","X","C","V","B","N","M","<<br>,","><br>.","?<br>/","Shift ",1.5,"&uarr;",1.5,"1<br>End","2<br>&darr;","3<br>PgDn","Enter"];
-kbLayout.ENG[5] = ["Ctrl","Win","Alt","_","Alt","Win","Menu","Ctrl",0.5,"&larr;","&darr;","&rarr;",0.5,"0<br>Ins",".<br>Del"];
+kbLayout.ENG[2] = ["Tab","Q","W","E","R","T","Y","U","I","O","P","{<br>[","}<br>]","|<br>\\",0.5,"Delete","End","PgDn",0.5,"7<br>Home","8<br>&_uarr;","9<br>PgUp","+"]
+kbLayout.ENG[3] = ["Caps Lock","A","S","D","F","G","H","J","K","L",":<br>;","\'\'<br>\'","Enter ",4,"4<br>&_larr;","5_","6<br>&_rarr;"];
+kbLayout.ENG[4] = ["Shift","Z","X","C","V","B","N","M","<<br>,","><br>.","?<br>/","Shift ",1.5,"&_uarr;",1.5,"1<br>End","2<br>&_darr;","3<br>PgDn","Enter"];
+kbLayout.ENG[5] = ["Ctrl","Win","Alt","_","Alt","Win","Menu","Ctrl",0.5,"&_larr;","&_darr;","&_rarr;",0.5,"0<br>Ins",".<br>Del"];
 
 kbLayout.ES = [];
 kbLayout.ES[1] = ['º','1','2','3','4','5','6','7','8','9','0','p','sp','del'];
@@ -147,8 +147,7 @@ var createKey = function(key,kbRow){
 	    "height:"+(sizeH*kbLayout.keysize)+"px;"+
 	    " ' ";
 	kbRow.innerHTML+=('<div class="keywrapper full" id="keywrapper'+key+'" '+aux+'></div>');
-	var keywrapper=document.getElementById("keywrapper"+key);
-	console.log("after create keywrapper");
+	var keywrapper=document.getElementById("keywrapper"+key);   /****/
 //	document.writeln('<div class="keywrapper full" '+aux+'>');
 	aux=" style=' "+
         "border-top:"+kbLayout.shadowTop+" "+parseInt(kbLayout.keysize/10)+"px solid;"+
