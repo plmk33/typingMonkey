@@ -22,7 +22,7 @@ kbLayout.ENG[1] = ["~<br>`","!<br>1","@<br>2","#<br>3","$<br>4","%<br>5","^<br>6
 kbLayout.ENG[2] = ["Tab","Q","W","E","R","T","Y","U","I","O","P","{<br>[","}<br>]","|<br>\\",0.5,"Delete","End","PgDn",0.5,"7<br>Home","8<br>&_uarr;","9<br>PgUp","+"]
 kbLayout.ENG[3] = ["Caps Lock","A","S","D","F","G","H","J","K","L",":<br>;","\'\'<br>\'","Enter ",4,"4<br>&_larr;","5_","6<br>&_rarr;"];
 kbLayout.ENG[4] = ["Shift","Z","X","C","V","B","N","M","<<br>,","><br>.","?<br>/","Shift ",1.5,"&_uarr;",1.5,"1<br>End","2<br>&_darr;","3<br>PgDn","Enter"];
-kbLayout.ENG[5] = ["Ctrl","Win","Alt","_","Alt","Win","Menu","Ctrl",0.5,"&_larr;","&_darr;","&_rarr;",0.5,"0<br>Ins",".<br>Del"];
+kbLayout.ENG[5] = ["Ctrl","Win","Alt","_","Alt ","Win ","Menu","Ctrl ",0.5,"&_larr;","&_darr;","&_rarr;",0.5,"0<br>Ins",".<br>Del"];
 
 kbLayout.ES = [];
 kbLayout.ES[1] = ['º','1','2','3','4','5','6','7','8','9','0','p','sp','del'];
@@ -126,6 +126,15 @@ var createKey = function(key,kbRow){
             break;  
         case "Alt":
             sizeW=1.25;
+            break;
+        case "Ctrl ":
+            sizeW=1.25;
+            break;  
+        case "Win ":
+            sizeW=1.25;
+            break;  
+        case "Alt ":
+            sizeW=1.25;
             break;  
         case "_":
             sizeW=6.25;
@@ -135,7 +144,14 @@ var createKey = function(key,kbRow){
             break;  
         case "Enter":
             sizeW=1;
+            sizeH=2;
+            break; 
+        case "+":
+            sizeH=2;
             break;  
+        case "0<br>Ins":
+            sizeW=2;
+            break;   
         default:
             break;
     }
@@ -146,6 +162,7 @@ var createKey = function(key,kbRow){
     kbRow.innerHTML+=('<div class="keywrapper full" id="keywrapper'+key+'" '+aux+'></div>');
     var keywrapper=document.getElementById("keywrapper"+key);   /****/
     aux=" style=' "+
+        "width:"+(sizeW*kbLayout.keysize-1)+";"+
         "border-top:"+kbLayout.shadowTop+" "+parseInt(kbLayout.keysize/10)+"px solid;"+
         "border-left:"+kbLayout.shadowLeft+" "+parseInt(kbLayout.keysize/7)+"px solid;"+
         "border-bottom:"+kbLayout.shadowBottom+" "+parseInt(kbLayout.keysize/5)+"px solid;"+
