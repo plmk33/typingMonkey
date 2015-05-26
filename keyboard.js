@@ -94,75 +94,75 @@ var emptySpace =function(aux,kbRow){
 }
 var createKey = function(key,kbRow){
     var aux="",  //for store the style     aux="style='+a +"xxx"+b+" ' ";
-    sizeW=1,   //sizeW 1= regular key,    sizeW=2 : 2 times  the sizeW of a regular key 
-    sizeH=1;
+    sizeW=kbLayout.keysize,   //sizeW 1= regular key,    sizeW=2 : 2 times  the sizeW of a regular key 
+    sizeH=kbLayout.keysize;
     switch(key){
         case "Tab":
-            sizeW=1.5;
+            sizeW*=1.5;
             break;
         case "Backspace":
-            sizeW=2;
+            sizeW*=2;
             break;
         case "|<br>\\":
-            sizeW=1.5;
+            sizeW*=1.5;
             break;
         case "Caps Lock":
-            sizeW=1.75;
+            sizeW*=1.75;
             break;  
         case "Enter ":  //added an space for distinguishing the two enter keys
-            sizeW=2.25;
+            sizeW*=2.25;
             break;
         case "Shift":
-            sizeW=2.25;
+            sizeW*=2.25;
             break;  
         case "Shift ": //added an space for distinguishing the two shifts keys
-            sizeW=2.75;
+            sizeW*=2.75;
             break;  
         case "Ctrl":
-            sizeW=1.25;
+            sizeW*=1.25;
             break;  
         case "Win":
-            sizeW=1.25;
+            sizeW*=1.25;
             break;  
         case "Alt":
-            sizeW=1.25;
+            sizeW*=1.25;
             break;
         case "Ctrl ":
-            sizeW=1.25;
+            sizeW*=1.25;
             break;  
         case "Win ":
-            sizeW=1.25;
+            sizeW*=1.25;
             break;  
         case "Alt ":
-            sizeW=1.25;
+            sizeW*=1.25;
             break;  
         case "_":
-            sizeW=6.25;
+            sizeW*=6.25;
             break;  
         case "Menu":
-            sizeW=1.25;
+            sizeW*=1.25;
             break;  
         case "Enter":
-            sizeW=1;
-            sizeH=2;
+            sizeW*=1;
+            sizeH*=2;
             break; 
         case "+":
-            sizeH=2;
+            sizeH*=2;
             break;  
         case "0<br>Ins":
-            sizeW=2;
+            sizeW*=2;
             break;   
         default:
             break;
     }
     aux=" style=' "+
-        "width:"+(sizeW*kbLayout.keysize)+"px;"+
-        "height:"+(sizeH*kbLayout.keysize)+"px;"+
+        "width:"+sizeW+"px;"+
+        "height:"+sizeH+"px;"+
         " ' ";
     kbRow.innerHTML+=('<div class="keywrapper full" id="keywrapper'+key+'" '+aux+'></div>');
     var keywrapper=document.getElementById("keywrapper"+key);   /****/
     aux=" style=' "+
-        "width:"+(sizeW*kbLayout.keysize-1)+";"+
+        "width:"+(sizeW-1)+";"+
         "border-top:"+kbLayout.shadowTop+" "+parseInt(kbLayout.keysize/10)+"px solid;"+
         "border-left:"+kbLayout.shadowLeft+" "+parseInt(kbLayout.keysize/7)+"px solid;"+
         "border-bottom:"+kbLayout.shadowBottom+" "+parseInt(kbLayout.keysize/5)+"px solid;"+
@@ -175,5 +175,31 @@ var createKey = function(key,kbRow){
         "top:"+parseInt(kbLayout.keysize/40)+"px;"+
         "left:"+parseInt(kbLayout.keysize/40)+"px;"+
         " ' ";
+        switch (key){            //parse to HTML readable the arrows uarr= up arrow
+            case("&_uarr;"):
+                key="&uarr;";
+                break;
+            case("&_darr;"):
+                key="&darr;";
+                break;
+            case("&_rarr;"):
+                key="&rarr;";
+                break;    
+            case("&_larr;"):
+                key="&larr;";
+                break;
+            case("8<br>&_uarr;"):   //
+                key="&uarr;";
+                break;
+            case("2<br>&_darr;"):
+                key="2<br>&darr;";
+                break;
+            case("6<br>&_rarr;"):
+                key="6<br>&rarr;";
+                break;    
+            case("4<br>&_larr;"):
+                key="4<br>&larr;";
+            break;
+        }
     key2d.innerHTML+=('         <p class="keylabel" '+aux+'>'+key+'</p>');
 }  
