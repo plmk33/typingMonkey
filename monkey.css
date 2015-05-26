@@ -1,118 +1,118 @@
 
 body{
-	background: black;
+    background: black;
 }
 
 .center{
-	margin-right:auto;
-	margin-left:auto;	
+    margin-right:auto;
+    margin-left:auto;   
 }
 
 #exerciseText{
-	border:2px;
-	background-color: rgb(200,256,256);
-	max-width:50em;
-	min-height:1em;
+    border:2px;
+    background-color: rgb(200,256,256);
+    max-width:50em;
+    min-height:1em;
 }
 
- /*****************	KEYBOARD AND KEYS   ********************/
+ /***************** KEYBOARD AND KEYS   ********************/
 #kbWrap{
-	border:red dotted 2px;
+    border:red dotted 2px;
 }
 #keyboard{
     background-color: white;
-	border-radius: 30px;
-	padding:44px;
-	display:table-caption;
-	border-bottom: 5px grey solid;
-  	border-left: 2px grey solid;
-  	border-right: 2px grey solid;
-  	border-top: 3px rgb(211, 204, 204) solid;
-  	margin:10px;
+    border-radius: 30px;
+    padding:44px;
+    display:table-caption;
+    border-bottom: 5px grey solid;
+    border-left: 2px grey solid;
+    border-right: 2px grey solid;
+    border-top: 3px rgb(211, 204, 204) solid;
+    margin:10px;
 }
 .kbRow{
-	display:inline-flex;
+    display:inline-flex;
 }
 #kbRow0{
-	margin-bottom: 31px; /*space betwen row 0  and row 1 */
+    margin-bottom: 31px; /*space betwen row 0  and row 1 */
 }
 
 .keywrapper{
-	width:44px;  /*size of default. key.changed in keyboard.js>sizekb(var)  - responsive- 44px default*/
-	height: 44px;
-	margin:1px;
+    width:44px;  /*size of default. key.changed in keyboard.js>sizekb(var)  - responsive- 44px default*/
+    height: 44px;
+    margin:1px;
 }
 /*.key3d{  shape of a key; sides, shadows, shines but not the plain top
-  	box-shadow: 0 0 0 1px black inset;  /ustitutes border
-	border-radius: 5px;
-	width:100%;
-	height: 100%;
-	margin:0px;
-	background-color: #cccccc;
+    box-shadow: 0 0 0 1px black inset;  /ustitutes border
+    border-radius: 5px;
+    width:100%;
+    height: 100%;
+    margin:0px;
+    background-color: #cccccc;
 }*/
 
 
 .key2d{  /* plain top of the key where we can see the character printed*/
 
-	top:1px;
-	border-radius: 4px;
-  	border: solid 1px #ddd;
-	height: 100%;
-	width: 100%;
-	background-color: #fcfcfc;
-  	padding: 2px;
-  	color:#000;
+    top:1px;
+    border-radius: 4px;
+    border: solid 1px #ddd;
+    height: 100%;
+    width: 100%;
+    background-color: #fcfcfc;
+    padding: 2px;
+    color:#000;
 
-  	border-top: #ddd solid 4px;
-  	border-bottom: #aaa solid 8px;
-  	border-left: #ccc solid 6px;
-  	border-right: #bbb 6px solid;
+    border-top: #ddd solid 4px;
+    border-bottom: #aaa solid 8px;
+    border-left: #ccc solid 6px;
+    border-right: #bbb 6px solid;
 
-  	-webkit-box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.75);  /*external border*/
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.75);  /*external border*/
     -moz-box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.75);
 
     box-sizing: border-box;
 }
 .keylabel{
-	position: relative;
-	top:2px;
-	left:2px;
-	margin: 0px;
-	font-size: 14px;
-	font-family: "Helvetica", "Arial", sans-serif;
+    position: relative;
+    top:2px;
+    left:2px;
+    margin: 0px;
+    font-size: 14px;
+    font-family: "Helvetica", "Arial", sans-serif;
 }
 
 
 
 .key3dOldstyle{  /*idea future look changer ; old style typewritter. currently is not being used*/
     display: inline-block;
-	border: solid 4px #DAC113;
-	border-radius: 2.1em;
-	background-color: #4F3E20;
+    border: solid 4px #DAC113;
+    border-radius: 2.1em;
+    background-color: #4F3E20;
 }
 .key2dOldStyle{}
 
-/********************* 		INPUT AREA		*********************/
+/*********************      INPUT AREA      *********************/
 
 #inputArea{
-	border:2px;
-	border-style: dotted;
-	width:50em;
-	min-height:1em;
+    border:2px;
+    border-style: dotted;
+    width:50em;
+    min-height:1em;
 
 }
 .noTextSelection{  
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;	
-	user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;  
+    user-select: none;
 }
 
 
-		/*keys*/
+        /*keys*/
 
 #k1{}
 #k2{}
@@ -122,34 +122,34 @@ body{
 
 /************************dinamic image (monkey)*******************/
 .graphSize{
-	width:300px;
-	height: 250px;
+    width:300px;
+    height: 250px;
 }
-#graphKeyStroke{               	/*background*/
-	background-color: #555;
-	border: 2px solid #999;
-	position: absolute;    /*2 layers overlaping */
-	z-index: -2;
+#graphKeyStroke{                /*background*/
+    background-color: #555;
+    border: 2px solid #999;
+    position: absolute;    /*2 layers overlaping */
+    z-index: -2;
 }
-#static{						/*monkey body*/
-	background-image: url("img/mBody.png");
-	background-repeat: no-repeat;
+#static{                        /*monkey body*/
+    background-image: url("img/mBody.png");
+    background-repeat: no-repeat;
 }
-#dinamic{						/*monkey hand*/
-	background-image: url("img/mHand.png");
-	background-repeat: no-repeat;
-	z-index: -1;                    /* layer between graphKeyStroke(background) and mBody*/
-	position:absolute;
-	top:100px;
-	left: 80px;
-	-webkit-transition: all 0.5s ease-in-out;  /*inicialization of transition, actually controled by function keyAnimation*/
+#dinamic{                       /*monkey hand*/
+    background-image: url("img/mHand.png");
+    background-repeat: no-repeat;
+    z-index: -1;                    /* layer between graphKeyStroke(background) and mBody*/
+    position:absolute;
+    top:100px;
+    left: 80px;
+    -webkit-transition: all 0.5s ease-in-out;  /*inicialization of transition, actually controled by function keyAnimation*/
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
 /*  for movement test purposes
 #dinamic:hover{
-	-webkit-transform : rotate(4deg); 
+    -webkit-transform : rotate(4deg); 
     -moz-transform : rotate(4deg); 
     -ms-transform : rotate(4deg); 
     -o-transform : rotate(4deg); 
