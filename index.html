@@ -6,10 +6,9 @@
     <script src="keyboard.js"  ></script> 
 </head>
 
-<body>
-	<!--
-<body onload="createKeyboard()" onresize="createKeyboard()">
--->
+
+<body  onload="createKeyboard()">
+
 
 	<div id="exerciseText" class="center noTextSelection">			<!--text to be typed by the user-->
 		<pre id="pastText">...</pre> 											<!-- previous text -->
@@ -18,10 +17,10 @@
     </div> 
 
 	<div id="kbWrap" class="center">				<!--shows keyboard   -->
-
-		<script> createKeyboard("ENG",800);</script> <!--//substitute 800 by kbWrap.width-->
+<!--
+		<script> createKeyboard("ENG");</script> 
 		
-
+-->
 	</div>
 
 	<div id="inputArea" class="center">			<!--input area for user-->

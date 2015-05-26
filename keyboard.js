@@ -19,7 +19,7 @@ kbLayout.shadowRight="#bbb";
 kbLayout.ENG = [];
 kbLayout.ENG[0] = ["Esc",1,"F1","F2","F3","F4",0.5,"F5","F6","F7","F8",0.5,"F9","F10","F11","F12",0.5,"PrtSc","Scroll Lock","Pause<br>Break"];
 kbLayout.ENG[1] = ["~<br>`","!<br>1","@<br>2","#<br>3","$<br>4","%<br>5","^<br>6","&<br>7","*<br>8","(<br>9",")<br>0","_<br>-","+<br>=","Backspace",0.5,"Insert","Home","PgUp",0.5,"Num Lock","/","*","-"];
-kbLayout.ENG[2] = ["Tab","Q","W","E","R","T","Y","U","I","O","P","{<br>[","}<br>]","|<br>\\",0.5,"Delete","End","PgDn",0.5,"7<br>Home","8<br>&uarr;","9<br>PgUp","+"]
+kbLayout.ENG[2] = ["Tab","Q","W","E","R","T","Y","U","I","O","P","{<br>[","}<br>]","|<br>\\",0.5,"Delete","End","PgDn",0.5,"7<br>Home","8<br>a","9<br>PgUp","+"]
 kbLayout.ENG[3] = ["Caps Lock","A","S","D","F","G","H","J","K","L",":<br>;","\'\'<br>\'","Enter ",4,"4<br>&larr;","5_","6<br>&rarr;"];
 kbLayout.ENG[4] = ["Shift","Z","X","C","V","B","N","M","<<br>,","><br>.","?<br>/","Shift ",1.5,"&uarr;",1.5,"1<br>End","2<br>&darr;","3<br>PgDn","Enter"];
 kbLayout.ENG[5] = ["Ctrl","Win","Alt","_","Alt","Win","Menu","Ctrl",0.5,"&larr;","&darr;","&rarr;",0.5,"0<br>Ins",".<br>Del"];
@@ -51,7 +51,9 @@ function getSizeWindow(){
 
 
 
-var createKeyboard = function (type,windowX){
+var createKeyboard = function (type){
+	if (type == "ENG") {   //so far only english kb
+		}else {  type="ENG"; }
 	getSizeWindow();
 
 	var	auxStyle1="style='"+
@@ -60,34 +62,40 @@ var createKeyboard = function (type,windowX){
 		          " ' ";
 	var auxStyle2="style='"+
 				 "height:"+(kbLayout.keysize+1)+"px;"+
-				 " ' "; // for storing the style		          
-	document.writeln('<div id="keyboard" class="center" '+auxStyle1+'>');
-	for (var g=0,h=kbLayout.ENG.length;g<h;g++){  //rows
-		document.writeln("<div  id='kbRow" + g + "' class='kbRow' "+auxStyle2+" >");
-		for(var i=0,j=kbLayout.ENG[g].length;i<j;i++){
-			var aux=kbLayout.ENG[g][i];
+				 " ' "; // for storing the style		
+	var kbWrap = document.getElementById('kbWrap');
+	kbWrap.innerHTML +='<div id="keyboard" class="center" '+auxStyle1+'></div>'; 
+	var keyboard=document.getElementById("keyboard");        
+//	document.writeln('<div id="keyboard" class="center" '+auxStyle1+'>');
+	for (var g=0,h=kbLayout[type].length;g<h;g++){  //rows
+		keyboard.innerHTML +=("<div  id='kbRow" + g + "' class='kbRow' "+auxStyle2+" ></div>");
+		var kbRow=document.getElementById("kbRow"+g);
+//		document.writeln("<div  id='kbRow" + g + "' class='kbRow' "+auxStyle2+" >");
+		for(var i=0,j=kbLayout[type][g].length;i<j;i++){
+			var aux=kbLayout[type][g][i];
 			if(isNaN(aux)){  //convert number to spaces between keys. This spaces are record as numbers
-				createKey(aux);
+				createKey(aux,kbRow);
 			} 	
 			else{
-				emptySpace(aux);
+				emptySpace(aux,kbRow);
 			}
 			//createKey(aux);
 		}
-		document.writeln("</div>");
+	//	document.writeln("</div>");
 	}
-	document.writeln("</div>");
+//	document.writeln("</div>");
 	
 }
 
 
 
-var emptySpace =function(aux){
+var emptySpace =function(aux,kbRow){
 	var auxStyle=" style='width:"+(aux*kbLayout.keysize)+"px;'";
-	document.writeln('<div class="keywrapper empty" '+auxStyle+'>');
-	document.writeln('</div>');
+	kbRow.innerHTML+=('<div class="keywrapper empty" '+auxStyle+'></div>');
+//	document.writeln('<div class="keywrapper empty" '+auxStyle+'>');
+//	document.writeln('</div>');
 }
-var createKey = function(key){
+var createKey = function(key,kbRow){
 	var aux="",  //for store the style     aux="style='+a +"xxx"+b+" ' ";
 	sizeW=1,   //sizeW 1= regular key,    sizeW=2 : 2 times  the sizeW of a regular key 
 	sizeH=1;
@@ -138,24 +146,27 @@ var createKey = function(key){
 	    "width:"+(sizeW*kbLayout.keysize)+"px;"+
 	    "height:"+(sizeH*kbLayout.keysize)+"px;"+
 	    " ' ";
-	document.writeln('<div class="keywrapper full" '+aux+'>');
+	kbRow.innerHTML+=('<div class="keywrapper full" id="keywrapper'+key+'" '+aux+'></div>');
+	var keywrapper=document.getElementById("keywrapper"+key);
+	console.log("after create keywrapper");
+//	document.writeln('<div class="keywrapper full" '+aux+'>');
 	aux=" style=' "+
         "border-top:"+kbLayout.shadowTop+" "+parseInt(kbLayout.keysize/10)+"px solid;"+
-        "borderLeft:"+kbLayout.shadowLeft+" "+parseInt(kbLayout.keysize/7)+"px solid;"+
+        "border-left:"+kbLayout.shadowLeft+" "+parseInt(kbLayout.keysize/7)+"px solid;"+
         "border-bottom:"+kbLayout.shadowBottom+" "+parseInt(kbLayout.keysize/5)+"px solid;"+
-        "border-right:"+kbLayout.shadowRight+" "+parseInt(kbLayout.keysize/7)+"px solid;"+	
-	document.writeln('  	<div id="k2d'+key+'" class="key2d" '+aux+'>');
+        "border-right:"+kbLayout.shadowRight+" "+parseInt(kbLayout.keysize/7)+"px solid;"+
+        " ' ";	
+    keywrapper.innerHTML+=('  	<div id="k2d'+key+'" class="key2d" '+aux+'></div>');
+    var key2d=document.getElementById("k2d"+key);
+//	document.writeln('  	<div id="k2d'+key+'" class="key2d" '+aux+'>');
 	aux=" style=' "+
 		"font-size:"+parseInt(kbLayout.keysize/4)+"px;"+
 		"top:"+parseInt(kbLayout.keysize/40)+"px;"+
 		"left:"+parseInt(kbLayout.keysize/40)+"px;"+
 		" ' ";
-	document.writeln('    		<p class="keylabel" '+aux+'>'+key+'</p>');
-	document.writeln(' 	</div>');
+	key2d.innerHTML+=('    		<p class="keylabel" '+aux+'>'+key+'</p>');
+//	document.writeln('    		<p class="keylabel" '+aux+'>'+key+'</p>');
+//	document.writeln(' 	</div>');
 	//document.writeln('	 </div>');
-	document.writeln('</div>');
+//	document.writeln('</div>');
 }  
-/*
-	document.getElementById("keyboard").style.borderRadius=kbLayout.keysize/2+"px";
-	document.getElementById("keyboard").style.padding=kbLayout.keysize+"px";
-}*/
