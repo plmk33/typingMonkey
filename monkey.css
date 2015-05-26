@@ -42,14 +42,6 @@ body{
     height: 44px;
     margin:1px;
 }
-/*.key3d{  shape of a key; sides, shadows, shines but not the plain top
-    box-shadow: 0 0 0 1px black inset;  /ustitutes border
-    border-radius: 5px;
-    width:100%;
-    height: 100%;
-    margin:0px;
-    background-color: #cccccc;
-}*/
 
 
 .key2d{  /* plain top of the key where we can see the character printed*/

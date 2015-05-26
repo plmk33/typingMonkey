@@ -79,11 +79,8 @@ var createKeyboard = function (type){
             else{
                 emptySpace(aux,kbRow);
             }
-            //createKey(aux);
         }
-    //  document.writeln("</div>");
     }
-//  document.writeln("</div>");
     
 }
 
@@ -148,7 +145,6 @@ var createKey = function(key,kbRow){
         " ' ";
     kbRow.innerHTML+=('<div class="keywrapper full" id="keywrapper'+key+'" '+aux+'></div>');
     var keywrapper=document.getElementById("keywrapper"+key);   /****/
-//  document.writeln('<div class="keywrapper full" '+aux+'>');
     aux=" style=' "+
         "border-top:"+kbLayout.shadowTop+" "+parseInt(kbLayout.keysize/10)+"px solid;"+
         "border-left:"+kbLayout.shadowLeft+" "+parseInt(kbLayout.keysize/7)+"px solid;"+
@@ -157,15 +153,10 @@ var createKey = function(key,kbRow){
         " ' ";  
     keywrapper.innerHTML+=('    <div id="k2d'+key+'" class="key2d" '+aux+'></div>');
     var key2d=document.getElementById("k2d"+key);
-//  document.writeln('      <div id="k2d'+key+'" class="key2d" '+aux+'>');
     aux=" style=' "+
         "font-size:"+parseInt(kbLayout.keysize/4)+"px;"+
         "top:"+parseInt(kbLayout.keysize/40)+"px;"+
         "left:"+parseInt(kbLayout.keysize/40)+"px;"+
         " ' ";
     key2d.innerHTML+=('         <p class="keylabel" '+aux+'>'+key+'</p>');
-//  document.writeln('          <p class="keylabel" '+aux+'>'+key+'</p>');
-//  document.writeln('  </div>');
-    //document.writeln('     </div>');
-//  document.writeln('</div>');
 }  
