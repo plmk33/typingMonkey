@@ -8,11 +8,22 @@ body{
     margin-left:auto;   
 }
 
-#exerciseText{
+#textWrap{
     border:2px;
-    background-color: rgb(200,256,256);
-    max-width:50em;
+    border: 2px solid rgb(102, 102, 102);
+    background-color: #DAEBF8;
+    padding: 10px;
+    min-width:15em;
     min-height:1em;
+    margin-left:10%;
+    margin-right:10%;
+}
+.textExercise{
+    color: #033147;
+    font-size: 1em;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    padding: 5px;
+    margin: 0px;
 }
 
  /***************** KEYBOARD AND KEYS   ********************/

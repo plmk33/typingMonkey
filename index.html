@@ -3,18 +3,17 @@
 <head>
 	<link id="defCSS" rel="stylesheet" type="text/css" href="monkey.css">
 	<script src="monkey.js"></script> 
-	<script src="keyboard.js"  ></script> 
+	<script src="keyboard.js"></script>
+	<script src="exerciseText.js"></script> 
 </head>
 
 
-<body  onload="createKeyboard()" onresize="createKeyboard()">
+<body  onload="createKeyboard(), createText()" onresize="createKeyboard()">
 
 	<div>
 
-	<div id="exerciseText" class="center noTextSelection">          <!--text to be typed by the user-->
-		<pre id="pastText">...</pre>                                            <!-- previous text -->
-		<pre id="text">Here you will see text you have to write...</pre>        <!-- text -->
-		<pre id="futText">This is the text comming next.</pre>                  <!-- future text -->
+	<div id="textWrap" class="center noTextSelection">          <!--text to be typed by the user-->
+            
 	</div> 
 
 	<div id="kbWrap" class="center">                <!--shows keyboard   -->
