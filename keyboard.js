@@ -210,3 +210,15 @@ var createKey = function(key,kbRow){
         }
     key2d.innerHTML+=('         <p class="keylabel" '+aux+'>'+key+'</p>');
 }  
+
+
+var keypressed = function (key,direction){
+    var key=document.getElementById("k2d"+key);
+    if (direction==1){   //press
+        key.style.top="2px";
+        key.style.zIndex="3";
+    }else{            //release
+        key.style.top="0px";
+        key.style.zIndex="6";
+    }
+}

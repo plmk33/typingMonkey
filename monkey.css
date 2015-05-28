@@ -2,9 +2,10 @@
 /*
 *
 *
-*z-index:   menu: +10;
-*           submenu+9
-*           
+*z-index:   menu:    +10;
+*           submenu: +8;
+*           kb, key pressed  k2d: +3;
+*           kb, regular key  k2d: +6;
 **/
 
 
@@ -123,11 +124,17 @@ body{
     height: 44px;
 }
 
+.full{
+    background-color: #000;
+}
 
 .key2d{  /* plain top of the key where we can see the character printed*/
-    border-radius: 4px;
+    position: relative;
+    z-index: 6;
     height: 100%;
     width: 100%;
+
+    border-radius: 4px;
     background-color: #fcfcfc;
     padding: 2px;
     color:#000;
@@ -181,13 +188,7 @@ body{
 }
 
 
-        /*keys*/
 
-#k1{}
-#k2{}
-#k3{}
-#k4{}
-/*etc*/ 
 
 /************************dinamic image (monkey)*******************/
 .graphSize{

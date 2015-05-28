@@ -50,7 +50,7 @@ var monkeyAnimation = function (direction) {
 
 var setSubmenu = function(){
     var submenu=document.getElementById("submenu");
-    submenu.style.height(submenuSize);
+    submenu.style.height="submenuSize";
 
 }
 
