@@ -24,12 +24,14 @@ kbLayout.ENG[3] = ["Caps Lock","A","S","D","F","G","H","J","K","L",":<br>;","\'\
 kbLayout.ENG[4] = ["Shift","Z","X","C","V","B","N","M","<<br>,","><br>.","?<br>/","Shift ",1.5,"&_uarr;",1.5,"1<br>End","2<br>&_darr;","3<br>PgDn","Enter"];
 kbLayout.ENG[5] = ["Ctrl","Win","Alt","_","Alt ","Win ","Menu","Ctrl ",0.5,"&_larr;","&_darr;","&_rarr;",0.5,"0<br>Ins",".<br>Del"];
 
+
 kbLayout.ES = [];
-kbLayout.ES[1] = ['º','1','2','3','4','5','6','7','8','9','0','p','sp','del'];
-kbLayout.ES[2] = ['tab','Q','W','E','R','T','Y','U','I','O','P','sp','sp'];
-kbLayout.ES[3] = ['bloq','A','S','D','F','G','H','J','K','L','Ñ','sp','int'];
-kbLayout.ES[4] = ['shift','<','Z','X','C','V','B','N','M',',','.','-','shift'];
-kbLayout.ES[5] = ['ctrl','sp','sp','alt','spacebar','altgr','sp','ctrl'];
+kbLayout.ES[0] = ["Esc",1,"F1","F2","F3","F4",0.5,"F5","F6","F7","F8",0.5,"F9","F10","F11","F12",0.5,"PrtSc","Scroll Lock","Pause<br>Break"];
+kbLayout.ES[1] = ["ª<br>º \\","!<br>1","\'\'<br>2","·<br>3 #","$<br>4 ~","%<br>5","&<br>6 ¬","/<br>7","(<br>8",")<br>9","=<br>0","?<br>\'","¿<br>¡","Backspace",0.5,"Insert","Home","PgUp",0.5,"Num Lock","/","*","-"];
+kbLayout.ES[2] = ["Tab","Q","W","E","R","T","Y","U","I","O","P","^<br>` [","*<br>+  ]","aux_es","Enter",0.5,"Delete","End","PgDn",0.5,"7<br>Home","8<br>&_uarr;","9<br>PgUp","+"]
+kbLayout.ES[3] = ["Caps Lock","A","S","D","F","G","H","J","K","L","Ñ","¨<br>´ {","Ç<br> } ",4,"4<br>&_larr;","5_","6<br>&_rarr;"];
+kbLayout.ES[4] = ["Shift","Z","X","C","V","B","N","M",";<br>,",":<br>.","_<br>-","Shift ",1.5,"&_uarr;",1.5,"1<br>End","2<br>&_darr;","3<br>PgDn","Enter"];
+kbLayout.ES[5] = ["Ctrl","Win","Alt","_","Alt ","Win ","Menu","Ctrl ",0.5,"&_larr;","&_darr;","&_rarr;",0.5,"0<br>Ins",".<br>Del"];
 
 
 

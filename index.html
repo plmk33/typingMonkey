@@ -7,8 +7,9 @@
 </head>
 
 
-<body  onload="createKeyboard()">
+<body  onload="createKeyboard()" onresize="createKeyboard()">
 
+	<div>
 
 	<div id="exerciseText" class="center noTextSelection">          <!--text to be typed by the user-->
 		<pre id="pastText">...</pre>                                            <!-- previous text -->
