@@ -1,6 +1,7 @@
 "use strict";
 
 var totalStrokes = 0;
+var submenuSize="7em";
 
 var keyDown = function(event) {   //all capital letters
     //getKey(event);
@@ -42,6 +43,25 @@ var monkeyAnimation = function (direction) {
         document.getElementById("dinamic").style.transform = "rotate(+10deg)";
     }
     
+
+}
+
+/*  MENU */
+
+var setSubmenu = function(){
+    var submenu=document.getElementById("submenu");
+    submenu.style.height(submenuSize);
+
+}
+
+var moveMenuDown = function(){
+    var submenu=document.getElementById("submenu");
+
+    if(submenu.style.top=="0em"){   //if it shows
+            submenu.style.top="-"+submenuSize;
+        }else{
+            submenu.style.top="0em";
+        };
 
 }
 

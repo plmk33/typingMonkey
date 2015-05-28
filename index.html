@@ -8,11 +8,11 @@
 </head>
 
 
-<body  onload="createKeyboard(), createText()" onresize="createKeyboard()">
+<body  onload="createKeyboard(), createText(), setSubmenu()" onresize="createKeyboard()">
 
 	<div id="menu">
 		<div id="btConfig">
-			<img id="imgsettings" src="img/settings.png">
+			<img id="imgsettings" src="img/settings.png" onclick="moveMenuDown()">
 		</div>
 		<div id="userinf">
 			<p id="username">John Doe </p>

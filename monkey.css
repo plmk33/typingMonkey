@@ -34,16 +34,16 @@ body{
 #submenu{
     position:absolute;
     font-size: 1.5em;
-    padding: 2em 0.5em;
+    padding: 2em 0.5em 0em;
     z-index: 9;
     color: #FFF;  
     background-color: #529CE5;
     height: 7em;
-    top: 0;
+    top: -7em;
     left: 0;
     width: 9em;
     -webkit-transition: -webkit-transform .8s ease-in-out;
-    transition: transform .8s ease-in-out;
+    transition: transform .4s ease-in-out;
     
 }
 #submenu ul{
