@@ -16,7 +16,7 @@ kbLayout.shadowBottom="#ccc";
 kbLayout.shadowTop="#bbb";
 kbLayout.shadowRight="#bbb";
 
-kbLayout.ENG = [];
+kbLayout.ENG = [];   //English keyboard
 kbLayout.ENG[0] = ["Esc",1,"F1","F2","F3","F4",0.5,"F5","F6","F7","F8",0.5,"F9","F10","F11","F12",0.5,"PrtSc","Scroll Lock","Pause<br>Break"];
 kbLayout.ENG[1] = ["~<br>`","!<br>1","@<br>2","#<br>3","$<br>4","%<br>5","^<br>6","&<br>7","*<br>8","(<br>9",")<br>0","_<br>-","+<br>=","Backspace",0.5,"Insert","Home","PgUp",0.5,"Num Lock","/","*","-"];
 kbLayout.ENG[2] = ["Tab","Q","W","E","R","T","Y","U","I","O","P","{<br>[","}<br>]","|<br>\\",0.5,"Delete","End","PgDn",0.5,"7<br>Home","8<br>&_uarr;","9<br>PgUp","+"]
@@ -25,7 +25,7 @@ kbLayout.ENG[4] = ["Shift","Z","X","C","V","B","N","M","<<br>,","><br>.","?<br>/
 kbLayout.ENG[5] = ["Ctrl","Win","Alt","_","Alt ","Win ","Menu","Ctrl ",0.5,"&_larr;","&_darr;","&_rarr;",0.5,"0<br>Ins",".<br>Del"];
 
 
-kbLayout.ES = [];
+kbLayout.ES = [];   //ES-ES  keyboard
 kbLayout.ES[0] = ["Esc",1,"F1","F2","F3","F4",0.5,"F5","F6","F7","F8",0.5,"F9","F10","F11","F12",0.5,"PrtSc","Scroll Lock","Pause<br>Break"];
 kbLayout.ES[1] = ["ª<br>º \\","!<br>1","\'\'<br>2","·<br>3 #","$<br>4 ~","%<br>5","&<br>6 ¬","/<br>7","(<br>8",")<br>9","=<br>0","?<br>\'","¿<br>¡","Backspace",0.5,"Insert","Home","PgUp",0.5,"Num Lock","/","*","-"];
 kbLayout.ES[2] = ["Tab","Q","W","E","R","T","Y","U","I","O","P","^<br>` [","*<br>+  ]","aux_es","Enter",0.5,"Delete","End","PgDn",0.5,"7<br>Home","8<br>&_uarr;","9<br>PgUp","+"]
@@ -66,16 +66,21 @@ var createKeyboard = function (type){
                  "height:"+(kbLayout.keysize+1)+"px;"+
                  " ' "; // for storing the style        
     var kbWrap = document.getElementById('kbWrap');
-    kbWrap.innerHTML +='<div id="keyboard" class="center" '+auxStyle1+'></div>'; 
+    kbWrap.innerHTML ='<div id="keyboard" class="center" '+auxStyle1+'></div>'; 
+    /*  overwrites content of "keyboard" if reloaded
+    * If kb exist previously it overwrites all the content. Looks like it can be improved :
+    * http://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
+    */
     var keyboard=document.getElementById("keyboard");        
 //  document.writeln('<div id="keyboard" class="center" '+auxStyle1+'>');
     for (var g=0,h=kbLayout[type].length;g<h;g++){  //rows
-        keyboard.innerHTML +=("<div  id='kbRow" + g + "' class='kbRow' "+auxStyle2+" ></div>");
+        keyboard.innerHTML +=
+        ("<div  id='kbRow" + g + "' class='kbRow' "+auxStyle2+" ></div>");
         var kbRow=document.getElementById("kbRow"+g);
 //      document.writeln("<div  id='kbRow" + g + "' class='kbRow' "+auxStyle2+" >");
         for(var i=0,j=kbLayout[type][g].length;i<j;i++){
             var aux=kbLayout[type][g][i];
-            if(isNaN(aux)){  //convert number to spaces between keys. This spaces are record as numbers
+            if(isNaN(aux)){  //convert numbers: They mean the space betwwen the keys
                 createKey(aux,kbRow);
             }   
             else{
