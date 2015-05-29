@@ -102,6 +102,7 @@ var emptySpace =function(aux,kbRow){
 var createKey = function(key,kbRow){
     var aux="",  //for store the style     aux="style='+a +"xxx"+b+" ' ";
     aux2 = "",
+    keyHTML=key,  //used for convert key to html readable symbols
     sizeW=kbLayout.keysize,   //sizeW 1= regular key,    sizeW=2 : 2 times  the sizeW of a regular key 
     sizeH=kbLayout.keysize;
     switch(key){
@@ -184,38 +185,8 @@ var createKey = function(key,kbRow){
         "top:"+parseInt(kbLayout.keysize/40)+"px;"+
         "left:"+parseInt(kbLayout.keysize/40)+"px;"+
         " ' ";
-        switch (key){            //parse to HTML readable the arrows uarr= up arrow
-            case("&_uarr;"):
-                key="&uarr;";
-                break;
-            case("&_darr;"):
-                key="&darr;";
-                break;
-            case("&_rarr;"):
-                key="&rarr;";
-                break;    
-            case("&_larr;"):
-                key="&larr;";
-                break;
-            case("8<br>&_uarr;"):   //
-                key="8<br>&uarr;";
-                break;
-            case("2<br>&_darr;"):
-                key="2<br>&darr;";
-                break;
-            case("6<br>&_rarr;"):
-                key="6<br>&rarr;";
-                break;    
-            case("4<br>&_larr;"):
-                key="4<br>&larr;";
-                break;
-            case("&_quot;<br>&_#39;"):
-                key="&quot;<br>&#39;";
-                break;    
-            default:
-            break;
-        }
-    key2d.innerHTML+=('         <p class="keylabel" '+aux+'>'+key+'</p>');
+    keyHTML=keyHTML.replace(/&_/g,"&");
+    key2d.innerHTML+=('         <p class="keylabel" '+aux+'>'+keyHTML+'</p>');
 }  
 
 
