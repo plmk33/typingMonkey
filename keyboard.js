@@ -66,7 +66,7 @@ var createKeyboard = function (type){
                  "height:"+(kbLayout.keysize+1)+"px;"+
                  " ' "; // for storing the style        
     var kbWrap = document.getElementById('kbWrap');
-    kbWrap.innerHTML ='<div id="keyboard" class="center" '+auxStyle1+'></div>'; 
+    kbWrap.innerHTML ='<div id="keyboard" class="center noTextSelection" '+auxStyle1+'></div>'; 
     /*  overwrites content of "keyboard" if reloaded
     * If kb exist previously it overwrites all the content. Looks like it can be improved :
     * http://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
