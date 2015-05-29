@@ -5,7 +5,7 @@
 "use strict";
 
 var kbLayout = []; 
-kbLayout.constantkb=29; //constant for creating keyboard.  ==(screen_width/key_width) 
+kbLayout.constantkb=29; //constant=(screen_width/key_width) 
 kbLayout.keysize=44;    //keysize is 44 by default  used by several functions
 kbLayout.windowX=1200;   //size of the window
 
@@ -16,12 +16,25 @@ kbLayout.shadowTop="#bbb";
 kbLayout.shadowRight="#bbb";
 
 kbLayout.ENG = [];   //English keyboard
-kbLayout.ENG[0] = ["Esc","gap:1","F1","F2","F3","F4","gap:0.5","F5","F6","F7","F8","gap:0.5","F9","F10","F11","F12","gap:0.5","PrtSc","Scroll Lock","Pause<br>Break"];
-kbLayout.ENG[1] = ["~<br>`","!<br>1","@<br>2","#<br>3","$<br>4","%<br>5","^<br>6","&<br>7","*<br>8","(<br>9",")<br>0","_<br>-","+<br>=","w:2,Backspace","gap:0.5","Insert","Home","PgUp","gap:0.5","Num Lock","/","*","-"];
-kbLayout.ENG[2] = ["w:1.5,Tab","Q","W","E","R","T","Y","U","I","O","P","{<br>[","}<br>]","w:1.5,|<br>\\","gap:0.5","Delete","End","PgDn","gap:0.5","7<br>Home","8<br>&_uarr;","9<br>PgUp","h:2,+"]
-kbLayout.ENG[3] = ["w:1.75,Caps Lock","A","S","D","F","G","H","J","K","L",":<br>;","&_quot;<br>&_#39;","w:2.25,Enter ","gap:4","4<br>&_larr;","5","6<br>&_rarr;"];
-kbLayout.ENG[4] = ["w:2.25,Shift","Z","X","C","V","B","N","M","<<br>,","><br>.","?<br>/","w:2.75,Shift ","gap:1.5","&_uarr;","gap:1.5","1<br>End","2<br>&_darr;","3<br>PgDn","h:2,Enter"];
-kbLayout.ENG[5] = ["w:1.25,Ctrl","w:1.25,Win","w:1.25,Alt","w:6.25, ","w:1.25,Alt ","w:1.25,Win ","w:1.25,Menu","w:1.25,Ctrl ","gap:0.5","&_larr;","&_darr;","&_rarr;","gap:0.5","w:2,0<br>Ins",".<br>Del"];
+kbLayout.ENG[0] = ["Esc","gap:1","F1","F2","F3","F4","gap:0.5","F5","F6","F7",
+    "F8","gap:0.5","F9","F10","F11","F12","gap:0.5","PrtSc","Scroll Lock",
+    "Pause<br>Break"];
+kbLayout.ENG[1] = ["~<br>`","!<br>1","@<br>2","#<br>3","$<br>4","%<br>5",
+    "^<br>6","&<br>7","*<br>8","(<br>9",")<br>0","_<br>-","+<br>=",
+    "w:2,Backspace","gap:0.5","Insert","Home","PgUp","gap:0.5","Num Lock","/",
+    "*",    "-"];
+kbLayout.ENG[2] = ["w:1.5,Tab","Q","W","E","R","T","Y","U","I","O","P","{<br>[",
+    "}<br>]","w:1.5,|<br>\\","gap:0.5","Del","End","PgDn","gap:0.5","7<br>Home",
+    "8<br>&_uarr;","9<br>PgUp","h:2,+"]
+kbLayout.ENG[3] = ["w:1.75,Caps Lock","A","S","D","F","G","H","J","K","L",
+    ":<br>;","&_quot;<br>&_#39;","w:2.25,Enter ","gap:4","4<br>&_larr;","5",
+    "6<br>&_rarr;"];
+kbLayout.ENG[4] = ["w:2.25,Shift","Z","X","C","V","B","N","M","<<br>,","><br>.",
+    "?<br>/","w:2.75,Shift ","gap:1.5","&_uarr;","gap:1.5","1<br>End",
+    "2<br>&_darr;","3<br>PgDn","h:2,Enter"];
+kbLayout.ENG[5] = ["w:1.25,Ctrl","w:1.25,Win","w:1.25,Alt","w:6.25, ",
+    "w:1.25,Alt ","w:1.25,Win ","w:1.25,Menu","w:1.25,Ctrl ","gap:0.5",
+    "&_larr;","&_darr;","&_rarr;","gap:0.5","w:2,0<br>Ins",".<br>Del"];
 
 kbLayout.ES = [];   //ES-ES  keyboard
 
@@ -32,7 +45,6 @@ function getSizeWindow(){
     g = d.getElementsByTagName('body')[0],
     x = w.innerWidth || e.clientWidth || g.clientWidth;
     //var y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-    //console.log("x="+x);
     kbLayout.windowX=x;
     kbLayout.keysize = parseInt(kbLayout.windowX/kbLayout.constantkb); 
     return x;
@@ -93,24 +105,15 @@ var createKey = function(key,kbRow){
     if(key.charAt(1)===":"){  // so is a key with special width or height 
        keyarray=key.split(",");
        if(keyarray[0].charAt(0)=="w"){  //if [0] is width
-                     console.log(keyarray[1]);
          sizeW*=keyarray[0].substr(2);
-
-             console.log(keyarray[0].substr(2)+" times ="+sizeW);
-
          keyarray.splice(0,1);
        }
        if(keyarray[0].charAt(0)=="h"){  //if [0] is height
-                     console.log("original= "+sizeH);
          sizeH*=keyarray[0].substr(2);
-
-             console.log(keyarray[0].substr(2)+"times ="+sizeH);
-
          keyarray.splice(0,1);
        }
        key=keyarray[0];
     }
-
     aux=" style=' "+
         "width:"+sizeW+"px;"+
         "height:"+sizeH+"px;"+

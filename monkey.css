@@ -233,6 +233,7 @@ header{
 footer{
     background:black;
     height:3em;
+    margin-top: 2em;
     color: #999;
     padding:1em;
 }
