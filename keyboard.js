@@ -101,6 +101,7 @@ var emptySpace =function(aux,kbRow){
 }
 var createKey = function(key,kbRow){
     var aux="",  //for store the style     aux="style='+a +"xxx"+b+" ' ";
+    aux2 = "",
     sizeW=kbLayout.keysize,   //sizeW 1= regular key,    sizeW=2 : 2 times  the sizeW of a regular key 
     sizeH=kbLayout.keysize;
     switch(key){
@@ -175,7 +176,8 @@ var createKey = function(key,kbRow){
         "border-bottom:"+kbLayout.shadowBottom+" "+parseInt(kbLayout.keysize/5)+"px solid;"+
         "border-right:"+kbLayout.shadowRight+" "+parseInt(kbLayout.keysize/7)+"px solid;"+
         " ' ";  
-    keywrapper.innerHTML+=('    <div id="k2d'+key+'" class="key2d" '+aux+'></div>');
+    aux2=" onmousedown='keypressed(\""+key+"\",1)' onmouseup='keypressed(\""+key+"\",-1)' ";
+    keywrapper.innerHTML+=('    <div id="k2d'+key+'" class="key2d" '+aux+aux2+'></div>');
     var key2d=document.getElementById("k2d"+key);
     aux=" style=' "+
         "font-size:"+parseInt(kbLayout.keysize/4)+"px;"+
