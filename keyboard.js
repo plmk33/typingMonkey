@@ -2,7 +2,6 @@
   *
   * 
   */
-
 "use strict";
 
 var kbLayout = []; 
@@ -17,24 +16,14 @@ kbLayout.shadowTop="#bbb";
 kbLayout.shadowRight="#bbb";
 
 kbLayout.ENG = [];   //English keyboard
-kbLayout.ENG[0] = ["Esc",1,"F1","F2","F3","F4",0.5,"F5","F6","F7","F8",0.5,"F9","F10","F11","F12",0.5,"PrtSc","Scroll Lock","Pause<br>Break"];
-kbLayout.ENG[1] = ["~<br>`","!<br>1","@<br>2","#<br>3","$<br>4","%<br>5","^<br>6","&<br>7","*<br>8","(<br>9",")<br>0","_<br>-","+<br>=","Backspace",0.5,"Insert","Home","PgUp",0.5,"Num Lock","/","*","-"];
-kbLayout.ENG[2] = ["Tab","Q","W","E","R","T","Y","U","I","O","P","{<br>[","}<br>]","|<br>\\",0.5,"Delete","End","PgDn",0.5,"7<br>Home","8<br>&_uarr;","9<br>PgUp","+"]
-kbLayout.ENG[3] = ["Caps Lock","A","S","D","F","G","H","J","K","L",":<br>;","&_quot;<br>&_#39;","Enter ",4,"4<br>&_larr;","5_","6<br>&_rarr;"];
-kbLayout.ENG[4] = ["Shift","Z","X","C","V","B","N","M","<<br>,","><br>.","?<br>/","Shift ",1.5,"&_uarr;",1.5,"1<br>End","2<br>&_darr;","3<br>PgDn","Enter"];
-kbLayout.ENG[5] = ["Ctrl","Win","Alt","_","Alt ","Win ","Menu","Ctrl ",0.5,"&_larr;","&_darr;","&_rarr;",0.5,"0<br>Ins",".<br>Del"];
-
+kbLayout.ENG[0] = ["Esc","gap:1","F1","F2","F3","F4","gap:0.5","F5","F6","F7","F8","gap:0.5","F9","F10","F11","F12","gap:0.5","PrtSc","Scroll Lock","Pause<br>Break"];
+kbLayout.ENG[1] = ["~<br>`","!<br>1","@<br>2","#<br>3","$<br>4","%<br>5","^<br>6","&<br>7","*<br>8","(<br>9",")<br>0","_<br>-","+<br>=","w:2,Backspace","gap:0.5","Insert","Home","PgUp","gap:0.5","Num Lock","/","*","-"];
+kbLayout.ENG[2] = ["w:1.5,Tab","Q","W","E","R","T","Y","U","I","O","P","{<br>[","}<br>]","w:1.5,|<br>\\","gap:0.5","Delete","End","PgDn","gap:0.5","7<br>Home","8<br>&_uarr;","9<br>PgUp","h:2,+"]
+kbLayout.ENG[3] = ["w:1.75,Caps Lock","A","S","D","F","G","H","J","K","L",":<br>;","&_quot;<br>&_#39;","w:2.25,Enter ","gap:4","4<br>&_larr;","5","6<br>&_rarr;"];
+kbLayout.ENG[4] = ["w:2.25,Shift","Z","X","C","V","B","N","M","<<br>,","><br>.","?<br>/","w:2.75,Shift ","gap:1.5","&_uarr;","gap:1.5","1<br>End","2<br>&_darr;","3<br>PgDn","h:2,Enter"];
+kbLayout.ENG[5] = ["w:1.25,Ctrl","w:1.25,Win","w:1.25,Alt","w:6.25, ","w:1.25,Alt ","w:1.25,Win ","w:1.25,Menu","w:1.25,Ctrl ","gap:0.5","&_larr;","&_darr;","&_rarr;","gap:0.5","w:2,0<br>Ins",".<br>Del"];
 
 kbLayout.ES = [];   //ES-ES  keyboard
-kbLayout.ES[0] = ["Esc",1,"F1","F2","F3","F4",0.5,"F5","F6","F7","F8",0.5,"F9","F10","F11","F12",0.5,"PrtSc","Scroll Lock","Pause<br>Break"];
-kbLayout.ES[1] = ["ª<br>º \\","!<br>1","\'\'<br>2","·<br>3 #","$<br>4 ~","%<br>5","&<br>6 ¬","/<br>7","(<br>8",")<br>9","=<br>0","?<br>\'","¿<br>¡","Backspace",0.5,"Insert","Home","PgUp",0.5,"Num Lock","/","*","-"];
-kbLayout.ES[2] = ["Tab","Q","W","E","R","T","Y","U","I","O","P","^<br>` [","*<br>+  ]","aux_es","Enter",0.5,"Delete","End","PgDn",0.5,"7<br>Home","8<br>&_uarr;","9<br>PgUp","+"]
-kbLayout.ES[3] = ["Caps Lock","A","S","D","F","G","H","J","K","L","Ñ","¨<br>´ {","Ç<br> } ",4,"4<br>&_larr;","5_","6<br>&_rarr;"];
-kbLayout.ES[4] = ["Shift","Z","X","C","V","B","N","M",";<br>,",":<br>.","_<br>-","Shift ",1.5,"&_uarr;",1.5,"1<br>End","2<br>&_darr;","3<br>PgDn","Enter"];
-kbLayout.ES[5] = ["Ctrl","Win","Alt","_","Alt ","Win ","Menu","Ctrl ",0.5,"&_larr;","&_darr;","&_rarr;",0.5,"0<br>Ins",".<br>Del"];
-
-
-
 
 function getSizeWindow(){
     var w = window,
@@ -48,9 +37,6 @@ function getSizeWindow(){
     kbLayout.keysize = parseInt(kbLayout.windowX/kbLayout.constantkb); 
     return x;
 }
-
-
-
 
 
 var createKeyboard = function (type){
@@ -80,90 +66,51 @@ var createKeyboard = function (type){
 //      document.writeln("<div  id='kbRow" + g + "' class='kbRow' "+auxStyle2+" >");
         for(var i=0,j=kbLayout[type][g].length;i<j;i++){
             var aux=kbLayout[type][g][i];
-            if(isNaN(aux)){  //convert numbers: They mean the space betwwen the keys
-                createKey(aux,kbRow);
-            }   
-            else{
+            if(aux.substr(0,3)==="gap"){
                 emptySpace(aux,kbRow);
+            }else{
+                createKey(aux,kbRow);
             }
         }
     }
     
 }
 
-
-
 var emptySpace =function(aux,kbRow){
+    aux=aux.substr(4);  //remove of "gap:"
     var auxStyle=" style='width:"+(aux*kbLayout.keysize)+"px;'";
     kbRow.innerHTML+=('<div class="keywrapper empty" '+auxStyle+'></div>');
 //  document.writeln('<div class="keywrapper empty" '+auxStyle+'>');
 //  document.writeln('</div>');
 }
 var createKey = function(key,kbRow){
-    var aux="",  //for store the style     aux="style='+a +"xxx"+b+" ' ";
+    var keyarray=[],    // key.split()
+    aux = "",             
     aux2 = "",
-    keyHTML=key,  //used for convert key to html readable symbols
-    sizeW=kbLayout.keysize,   //sizeW 1= regular key,    sizeW=2 : 2 times  the sizeW of a regular key 
+    keyHTML ="",       
+    sizeW=kbLayout.keysize,   //sizeW=2 : 2 times  the size of a regular key 
     sizeH=kbLayout.keysize;
-    switch(key){
-        case "Tab":
-            sizeW*=1.5;
-            break;
-        case "Backspace":
-            sizeW*=2;
-            break;
-        case "|<br>\\":
-            sizeW*=1.5;
-            break;
-        case "Caps Lock":
-            sizeW*=1.75;
-            break;  
-        case "Enter ":  //added an space for distinguishing the two enter keys
-            sizeW*=2.25;
-            break;
-        case "Shift":
-            sizeW*=2.25;
-            break;  
-        case "Shift ": //added an space for distinguishing the two shifts keys
-            sizeW*=2.75;
-            break;  
-        case "Ctrl":
-            sizeW*=1.25;
-            break;  
-        case "Win":
-            sizeW*=1.25;
-            break;  
-        case "Alt":
-            sizeW*=1.25;
-            break;
-        case "Ctrl ":
-            sizeW*=1.25;
-            break;  
-        case "Win ":
-            sizeW*=1.25;
-            break;  
-        case "Alt ":
-            sizeW*=1.25;
-            break;  
-        case "_":
-            sizeW*=6.25;
-            break;  
-        case "Menu":
-            sizeW*=1.25;
-            break;  
-        case "Enter":
-            sizeW*=1;
-            sizeH*=2;
-            break; 
-        case "+":
-            sizeH*=2;
-            break;  
-        case "0<br>Ins":
-            sizeW*=2;
-            break;   
-        default:
-            break;
+    if(key.charAt(1)===":"){  // so is a key with special width or height 
+       keyarray=key.split(",");
+       if(keyarray[0].charAt(0)=="w"){  //if [0] is width
+                     console.log(keyarray[1]);
+         sizeW*=keyarray[0].substr(2);
+
+             console.log(keyarray[0].substr(2)+" times ="+sizeW);
+
+         keyarray.splice(0,1);
+       }
+       if(keyarray[0].charAt(0)=="h"){  //if [0] is height
+                     console.log("original= "+sizeH);
+         sizeH*=keyarray[0].substr(2);
+
+             console.log(keyarray[0].substr(2)+"times ="+sizeH);
+
+         keyarray.splice(0,1);
+       }
+       key=keyarray[0];
     }
+
     aux=" style=' "+
         "width:"+sizeW+"px;"+
         "height:"+sizeH+"px;"+
@@ -185,10 +132,9 @@ var createKey = function(key,kbRow){
         "top:"+parseInt(kbLayout.keysize/40)+"px;"+
         "left:"+parseInt(kbLayout.keysize/40)+"px;"+
         " ' ";
-    keyHTML=keyHTML.replace(/&_/g,"&");
+    keyHTML=key.replace(/&_/g,"&");
     key2d.innerHTML+=('         <p class="keylabel" '+aux+'>'+keyHTML+'</p>');
 }  
-
 
 var keypressed = function (key,direction){
     var key=document.getElementById("k2d"+key);
