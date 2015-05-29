@@ -13,6 +13,7 @@ body{
     background: rgb(202, 198, 164);
     margin:0px;
     padding:0px;
+    font-family:  Arial;
 }
 
 .center{
@@ -29,7 +30,6 @@ header{
     height:2em;
     background-color: #003366;
     color: #FFF;
-    font-family:  Arial;
     z-index: 10;
 }
 #submenu{
@@ -232,4 +232,13 @@ header{
 
 footer{
     background:black;
+    height:3em;
+    color: #999;
+    padding:1em;
+}
+footer p{
+    text-align: center;
+}
+footer img{
+    height: 2em;
 }
