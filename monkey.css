@@ -21,7 +21,7 @@ body{
 }
 
 /**************** menu ****************************/
-#menu{
+header{
     position: absolute;
     top:0;
     display:flex;
@@ -74,6 +74,7 @@ body{
 #userinf p{
     display:inline;
 }
+
 
 
 /**************** text exercise ****************************/
@@ -227,3 +228,7 @@ body{
     transform : rotate(4deg); 
 }
 */
+
+footer{
+    background:black;
+}
