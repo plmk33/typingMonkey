@@ -5,32 +5,34 @@ var submenuSize="7em";
 
 
 
-document.addEventListener("click",alert("has hecho click"),true);
-var keyDown = function(event) {   //all capital letters
+document.addEventListener("keydown",keyDown(event),true);
+document.addEventListener("click",keyPress(event),true);
+document.addEventListener("keyup",keyUp(event),true);
+
+function keyDown(event) {   //all capital letters
     console.log("keydown");
-    //getKey(event);
+    getKey(event);
     keyAnimation(getKey(event),1);
 }
-var keyPress = function(event) {  //distinguish capital letters and lowercase
+function keyPress (event) {  //distinguish capital letters and lowercase
     totalStrokes++;
     console.log("keyPress");
     getKey(event);
-   
 }
-var keyUp = function(event) {
+function keyUp(event) {
     console.log("keyUp");
     keyAnimation(getKey(event),-1);
 }
 
     
-var getKey = function (event) {
+function getKey (event) {
     var x = event.which || event.keyCode;   /* Firefox doesn't support event.which , then  use event.keyCode */
 //  console.log("The Unicode value is: " + x);
     console.log(String.fromCharCode(x));
     return String.fromCharCode(x);
 }
 
-var keyAnimation = function(key,direction){
+function keyAnimation(key,direction){
     keypressed(key,direction);
 }
 

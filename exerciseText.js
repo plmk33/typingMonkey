@@ -7,6 +7,9 @@ exercise["testshort"]="Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 var createText = function(level){
 	/* switch (level){}*/
 	var wrapText=document.getElementById("textWrap");
-	wrapText.innerHTML=("<p class='textExercise'>"+exercise['testshort']+"</p>");
+	wrapText.innerHTML=("<p class='textExercise textA'>"+exercise['testshort']+"</p>"+
+						"<p class='textExercise textB'>"+"Lorem ipsum dolor sit am"+"</p>"
+						);
+
 
 }

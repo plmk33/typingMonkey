@@ -4,7 +4,7 @@
   */
 "use strict";
 
-var kbLayout = []; 
+var kbLayout = []; //namespace
 kbLayout.constantkb=29; //constant=(screen_width/key_width) 
 kbLayout.keysize=44;    //keysize is 44 by default  used by several functions
 kbLayout.windowX=1200;   //size of the window
