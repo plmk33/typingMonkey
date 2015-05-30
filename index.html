@@ -8,7 +8,8 @@
 </head>
 
 
-<body  onload="createKeyboard(), createText(), setSubmenu()" onresize="createKeyboard()">
+<body  onload="createKeyboard(), createText(), setSubmenu()" onresize="createKeyboard()"
+onkeydown="keyDown(event)" onkeypress="keyPress(event)" onkeyup="keyUp(event)">
 
 	<header>
 		<div id="btConfig" style="width:3em;">

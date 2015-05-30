@@ -90,12 +90,25 @@ header{
     margin-right:10%;
     margin-top:3em;  /*top margin*/
 }
-.textExercise{
+.textExerciseA{
     color: #033147;
     font-size: 1em;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     padding: 5px;
     margin: 0px;
+}
+.textExercise{
+    position:absolute;
+    color: #033147;
+    font-size: 1em;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    padding: 5px;
+    margin: 0px;
+    z-index:3;
+}
+.textB{
+    color: #f00;
+    z-index:4;
 }
 
  /***************** KEYBOARD AND KEYS   ********************/
